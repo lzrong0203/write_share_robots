@@ -149,7 +149,7 @@ class PTTScraper:
                     reach = True
                     break
 
-        print(post_date)
+        # print(post_date)
         with ThreadPoolExecutor() as executor:
             data = list(executor.map(self.fetch_post, links))
         return data, reach, len(links)
