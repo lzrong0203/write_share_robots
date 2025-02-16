@@ -19,9 +19,12 @@ class PTT_SCRAPER:
     def get_soup(url):
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
-                          "Chrome/58.0.3029.110 Safari/537.3", }
+                          "Chrome/58.0.3029.110 Safari/537.3",
+            "Accept": "*/*"}
         cookies = {"over18": "1"}
-        r = requests.get(url, headers=headers, cookies=cookies)
+        session = requests.Session()
+        session.max_redirects = 60
+        r = session.get(url, headers=headers, cookies=cookies, allow_redirects=True)
         return BeautifulSoup(r.content, "html.parser")
 
     def get_title_href(self):
@@ -153,7 +156,7 @@ if __name__ == "__main__":
     board = "stock"
     scraper = PTT_SCRAPER(board)
     st = time.time()
-    print(scraper.fetch_posts(max_posts=30, until_date="9/29")[["title", "date"]])
+    print(scraper.fetch_posts(max_posts=30, until_date="1/20")[["title", "date"]])
     et = time.time()
     print(et - st)
     # print(pd.DataFrame(scraper.get_post_content_push("/bbs/Stock/M.1726581004.A.B1C.html")["pushes"]))
