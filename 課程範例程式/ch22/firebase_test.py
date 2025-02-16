@@ -8,6 +8,9 @@ from ch20.PTTScraper import PTT_SCRAPER
 class Firebase_PTT:
 
     def __init__(self, collection):
+        """
+        Certificate 請替換成自己的
+        """
         cred = credentials.Certificate("stocksentiment-8cf69-firebase-adminsdk-rsalw-4d49167956.json")
         firebase_admin.initialize_app(cred)
         db = firestore.client()
