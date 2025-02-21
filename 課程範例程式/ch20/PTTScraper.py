@@ -14,6 +14,7 @@ class PTT_SCRAPER:
         self.url = PTT_SCRAPER.ptt_url + "/bbs/" + board
         self.post_num = 0
         self.goal = False
+        self.max_posts = float('inf')  # 初始化為無限大
 
     @staticmethod
     def get_soup(url):
@@ -39,7 +40,7 @@ class PTT_SCRAPER:
 
         return href_list
 
-    def get_title_data(self, max_posts=10, until_date=None):
+    def get_title_data(self, until_date=None):  # 移除 max_posts 參數
         soup = PTT_SCRAPER.get_soup(self.url)
         list_title = soup.find_all("div", {"class": "r-ent"})
 
@@ -53,11 +54,17 @@ class PTT_SCRAPER:
                          if d.find("a") is not None and not d.find_previous_sibling("div", class_="r-list-sep")]
         # print(data_filtered)
         parallel_list = []
+        remaining_posts = self.max_posts - self.post_num  # 計算還需要抓取幾篇文章
+
         for d in data_filtered:
-            if self.post_num >= max_posts:
+            # # if self.post_num >= max_posts: # 移除這個檢查
+            #     self.goal = True
+            #     break
+            if len(parallel_list) >= remaining_posts:  # 如果已經收集足夠的文章
                 self.goal = True
                 break
-            author = d.find("div", class_="author").text.strip()
+
+            # author = d.find("div", class_="author").text.strip()
             date = d.find("div", class_="date").text.strip()
             if datetime.strptime(date, "%m/%d") < until_date:
                 self.goal = True
@@ -120,16 +127,20 @@ class PTT_SCRAPER:
             push_ipdatetime = push.find("span", class_="push-ipdatetime").text.strip()
             push_dict = {"tag": push_tag, "userid": push_userid,
                          "content": push_content, "datetime": push_ipdatetime}
+            return push_dict  # 移到 try 區塊內
         except Exception as e:
             print(e)
-        return push_dict
+            return dict()  # 發生異常時返回空字典
 
     def fetch_posts(self, max_posts=10, until_date=None):
+        self.post_num = 0  # 新增這行：重置計數器
+        self.max_posts = max_posts  # 設置最大文章數
         post_datas = []
-        until_date = datetime.strptime(until_date, "%m/%d")
-        while not self.goal:
+        if until_date:  # 修改這行：加入條件判斷
+            until_date = datetime.strptime(until_date, "%m/%d")
+        while not self.goal and self.post_num < max_posts:
             if until_date is not None:
-                post_data = self.get_title_data(max_posts, until_date)
+                post_data = self.get_title_data(until_date)
             else:
                 post_data = self.get_title_data()
             post_datas.extend(post_data)
