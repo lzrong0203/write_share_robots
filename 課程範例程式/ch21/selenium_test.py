@@ -64,7 +64,7 @@ class TWSE_NEWS:
         self.get_news_content((buttons, codes))
 
     def get_news_content(self, info):
-        for i in tqdm(range(min(len(info[0]), self.max_records - 1)), desc="Processing news"):
+        for i in tqdm(range(min(len(info[0]), self.max_records)), desc="Processing news"):
             # print(self.driver.window_handles)
             root = self.driver.current_window_handle
             info[0][i].click()
@@ -86,11 +86,8 @@ class TWSE_NEWS:
     def close(self):
         self.driver.close()
 
-
 if __name__ == "__main__":
     driver = TWSE_NEWS(headless=True)
-
     url = "https://mops.twse.com.tw/mops/web/t05st02"
     driver.get_day_news(url, year=113, month=5, day=8)
-
     driver.close()

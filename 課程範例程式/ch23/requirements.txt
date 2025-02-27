@@ -1,0 +1,11 @@
+Django==4.2.7
+yfinance==0.2.31
+pandas==2.1.1
+numpy==1.26.0
+matplotlib==3.8.0
+plotly==5.17.0
+firebase-admin==6.2.0
+beautifulsoup4==4.12.2
+requests==2.31.0
+selenium==4.15.2
+webdriver-manager==4.0.1 
