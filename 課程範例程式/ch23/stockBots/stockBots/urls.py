@@ -21,4 +21,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("accounts.urls")),  # 包含 accounts 應用程式的 URL
     path("stocks/", include("stock_charts.urls")),  # 添加 stock_charts 應用程式的 URL
+    path("ptt/", include("ptt_viewer.urls")),  # 添加 ptt_viewer 應用程式的 URL
 ]

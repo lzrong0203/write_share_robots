@@ -1,0 +1,411 @@
+INFO 2025-03-09 21:49:04,457 autoreload Watching for file changes with StatReloader
+INFO 2025-03-09 21:49:05,746 utils NumExpr defaulting to 8 threads.
+DEBUG 2025-03-09 21:49:05,915 __init__ matplotlib data path: /Users/lzrong/anaconda3/lib/python3.11/site-packages/matplotlib/mpl-data
+DEBUG 2025-03-09 21:49:05,918 __init__ CONFIGDIR=/Users/lzrong/.matplotlib
+DEBUG 2025-03-09 21:49:05,919 __init__ interactive is False
+DEBUG 2025-03-09 21:49:05,919 __init__ platform is darwin
+DEBUG 2025-03-09 21:49:05,946 __init__ CACHEDIR=/Users/lzrong/.matplotlib
+DEBUG 2025-03-09 21:49:05,947 font_manager Using fontManager instance from /Users/lzrong/.matplotlib/fontlist-v330.json
+INFO 2025-03-09 21:49:07,256 firebase_client Firebase 憑證路徑: /Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stocksentiment-8cf69-firebase-adminsdk-rsalw-a998bda61f.json
+INFO 2025-03-09 21:49:07,257 firebase_client 憑證文件是否存在: False
+ERROR 2025-03-09 21:49:07,257 firebase_client Firebase 初始化失敗: [Errno 2] No such file or directory: '/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stocksentiment-8cf69-firebase-adminsdk-rsalw-a998bda61f.json'
+ERROR 2025-03-09 21:49:07,257 firebase_client Traceback (most recent call last):
+  File "/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/ptt_viewer/firebase_client.py", line 36, in __init__
+    cred = credentials.Certificate(cred_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/firebase_admin/credentials.py", line 97, in __init__
+    with open(cert) as json_file:
+         ^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stocksentiment-8cf69-firebase-adminsdk-rsalw-a998bda61f.json'
+
+ERROR 2025-03-09 21:49:07,257 views Error in post_list view: [Errno 2] No such file or directory: '/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stocksentiment-8cf69-firebase-adminsdk-rsalw-a998bda61f.json'
+ERROR 2025-03-09 21:49:07,258 views Traceback (most recent call last):
+  File "/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/ptt_viewer/views.py", line 18, in post_list
+    firebase_client = FirebasePTTClient.get_instance()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/ptt_viewer/firebase_client.py", line 19, in get_instance
+    cls._instance = cls()
+                    ^^^^^
+  File "/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/ptt_viewer/firebase_client.py", line 36, in __init__
+    cred = credentials.Certificate(cred_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/firebase_admin/credentials.py", line 97, in __init__
+    with open(cert) as json_file:
+         ^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stocksentiment-8cf69-firebase-adminsdk-rsalw-a998bda61f.json'
+
+ERROR 2025-03-09 21:49:07,260 log Internal Server Error: /ptt/
+Traceback (most recent call last):
+  File "/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/ptt_viewer/views.py", line 18, in post_list
+    firebase_client = FirebasePTTClient.get_instance()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/ptt_viewer/firebase_client.py", line 19, in get_instance
+    cls._instance = cls()
+                    ^^^^^
+  File "/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/ptt_viewer/firebase_client.py", line 36, in __init__
+    cred = credentials.Certificate(cred_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/firebase_admin/credentials.py", line 97, in __init__
+    with open(cert) as json_file:
+         ^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stocksentiment-8cf69-firebase-adminsdk-rsalw-a998bda61f.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/stock_charts/views.py", line 12, in wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/ptt_viewer/views.py", line 43, in post_list
+    return render(request, 'ptt_viewer/post_list.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 489, in parse
+    raise self.error(token, e)
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 702, in __init__
+    self.args_check(filter_name, filter_func, args)
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 764, in args_check
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: default requires 2 arguments, 1 provided
+INFO 2025-03-09 21:49:23,714 firebase_client Firebase 憑證路徑: /Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stocksentiment-8cf69-firebase-adminsdk-rsalw-a998bda61f.json
+INFO 2025-03-09 21:49:23,714 firebase_client 憑證文件是否存在: False
+ERROR 2025-03-09 21:49:23,714 firebase_client Firebase 初始化失敗: [Errno 2] No such file or directory: '/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stocksentiment-8cf69-firebase-adminsdk-rsalw-a998bda61f.json'
+ERROR 2025-03-09 21:49:23,715 firebase_client Traceback (most recent call last):
+  File "/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/ptt_viewer/firebase_client.py", line 36, in __init__
+    cred = credentials.Certificate(cred_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/firebase_admin/credentials.py", line 97, in __init__
+    with open(cert) as json_file:
+         ^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stocksentiment-8cf69-firebase-adminsdk-rsalw-a998bda61f.json'
+
+ERROR 2025-03-09 21:49:23,715 views Error in post_list view: [Errno 2] No such file or directory: '/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stocksentiment-8cf69-firebase-adminsdk-rsalw-a998bda61f.json'
+ERROR 2025-03-09 21:49:23,715 views Traceback (most recent call last):
+  File "/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/ptt_viewer/views.py", line 18, in post_list
+    firebase_client = FirebasePTTClient.get_instance()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/ptt_viewer/firebase_client.py", line 19, in get_instance
+    cls._instance = cls()
+                    ^^^^^
+  File "/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/ptt_viewer/firebase_client.py", line 36, in __init__
+    cred = credentials.Certificate(cred_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/firebase_admin/credentials.py", line 97, in __init__
+    with open(cert) as json_file:
+         ^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stocksentiment-8cf69-firebase-adminsdk-rsalw-a998bda61f.json'
+
+ERROR 2025-03-09 21:49:23,721 log Internal Server Error: /ptt/
+Traceback (most recent call last):
+  File "/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/ptt_viewer/views.py", line 18, in post_list
+    firebase_client = FirebasePTTClient.get_instance()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/ptt_viewer/firebase_client.py", line 19, in get_instance
+    cls._instance = cls()
+                    ^^^^^
+  File "/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/ptt_viewer/firebase_client.py", line 36, in __init__
+    cred = credentials.Certificate(cred_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/firebase_admin/credentials.py", line 97, in __init__
+    with open(cert) as json_file:
+         ^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stocksentiment-8cf69-firebase-adminsdk-rsalw-a998bda61f.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/stock_charts/views.py", line 12, in wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/ptt_viewer/views.py", line 43, in post_list
+    return render(request, 'ptt_viewer/post_list.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 489, in parse
+    raise self.error(token, e)
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 702, in __init__
+    self.args_check(filter_name, filter_func, args)
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 764, in args_check
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: default requires 2 arguments, 1 provided
+INFO 2025-03-09 21:49:24,552 firebase_client Firebase 憑證路徑: /Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stocksentiment-8cf69-firebase-adminsdk-rsalw-a998bda61f.json
+INFO 2025-03-09 21:49:24,552 firebase_client 憑證文件是否存在: False
+ERROR 2025-03-09 21:49:24,552 firebase_client Firebase 初始化失敗: [Errno 2] No such file or directory: '/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stocksentiment-8cf69-firebase-adminsdk-rsalw-a998bda61f.json'
+ERROR 2025-03-09 21:49:24,553 firebase_client Traceback (most recent call last):
+  File "/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/ptt_viewer/firebase_client.py", line 36, in __init__
+    cred = credentials.Certificate(cred_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/firebase_admin/credentials.py", line 97, in __init__
+    with open(cert) as json_file:
+         ^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stocksentiment-8cf69-firebase-adminsdk-rsalw-a998bda61f.json'
+
+ERROR 2025-03-09 21:49:24,553 views Error in post_list view: [Errno 2] No such file or directory: '/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stocksentiment-8cf69-firebase-adminsdk-rsalw-a998bda61f.json'
+ERROR 2025-03-09 21:49:24,553 views Traceback (most recent call last):
+  File "/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/ptt_viewer/views.py", line 18, in post_list
+    firebase_client = FirebasePTTClient.get_instance()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/ptt_viewer/firebase_client.py", line 19, in get_instance
+    cls._instance = cls()
+                    ^^^^^
+  File "/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/ptt_viewer/firebase_client.py", line 36, in __init__
+    cred = credentials.Certificate(cred_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/firebase_admin/credentials.py", line 97, in __init__
+    with open(cert) as json_file:
+         ^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stocksentiment-8cf69-firebase-adminsdk-rsalw-a998bda61f.json'
+
+ERROR 2025-03-09 21:49:24,553 log Internal Server Error: /ptt/
+Traceback (most recent call last):
+  File "/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/ptt_viewer/views.py", line 18, in post_list
+    firebase_client = FirebasePTTClient.get_instance()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/ptt_viewer/firebase_client.py", line 19, in get_instance
+    cls._instance = cls()
+                    ^^^^^
+  File "/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/ptt_viewer/firebase_client.py", line 36, in __init__
+    cred = credentials.Certificate(cred_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/firebase_admin/credentials.py", line 97, in __init__
+    with open(cert) as json_file:
+         ^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stocksentiment-8cf69-firebase-adminsdk-rsalw-a998bda61f.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/stock_charts/views.py", line 12, in wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/ptt_viewer/views.py", line 43, in post_list
+    return render(request, 'ptt_viewer/post_list.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 489, in parse
+    raise self.error(token, e)
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 702, in __init__
+    self.args_check(filter_name, filter_func, args)
+  File "/Users/lzrong/anaconda3/lib/python3.11/site-packages/django/template/base.py", line 764, in args_check
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: default requires 2 arguments, 1 provided
+INFO 2025-03-09 21:49:34,031 autoreload /Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/ptt_viewer/firebase_client.py changed, reloading.

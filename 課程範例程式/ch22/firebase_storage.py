@@ -16,7 +16,7 @@ class FirebaseStorageUploader:
         初始化 Firebase Storage
         """
         # 初始化 Firebase（請替換成您的憑證檔案路徑）
-        cred = credentials.Certificate("stocksentiment-8cf69-firebase-adminsdk-rsalw-4d49167956.json")
+        cred = credentials.Certificate("stocksentiment-8cf69-firebase-adminsdk-rsalw-a998bda61f.json")
         firebase_admin.initialize_app(cred, {
             'storageBucket': 'stocksentiment-8cf69.firebasestorage.app'
         })

@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-tnxqvtl*x5z_$b=$l$38qec=nd_a4^fql4-r3oyq5)eud2-9ei"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["127.0.0.1"]
 
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "accounts",
     "stock_charts",
+    "ptt_viewer",
 ]
 
 MIDDLEWARE = [

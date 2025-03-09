@@ -1,0 +1,29 @@
+{% extends 'accounts/base.html' %}
+
+{% block title %}PTT 文章列表 | Firebase 身份驗證{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center mb-4">PTT 股板文章列表</h2>
+    
+    <!-- 文章列表 -->
+    {% if posts %}
+        <div class="list-group">
+            {% for post in posts %}
+            <a href="{% url 'post_detail' post.id %}" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{{ post.title }}</h5>
+                    <small>{{ post.date }}</small>
+                </div>
+                <p class="mb-1">{{ post.content|truncatechars:100 }}</p>
+                <small>推文數: {{ post.pushes|length }}</small>
+            </a>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-info">
+            沒有找到文章
+        </div>
+    {% endif %}
+</div>
+{% endblock %} 

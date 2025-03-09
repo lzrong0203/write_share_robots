@@ -20,7 +20,7 @@ class Firebase_PTT:
         """
         Certificate 請替換成自己的
         """
-        cred = credentials.Certificate("stocksentiment-8cf69-firebase-adminsdk-rsalw-4d49167956.json")
+        cred = credentials.Certificate("stocksentiment-8cf69-firebase-adminsdk-rsalw-a998bda61f.json")
         firebase_admin.initialize_app(cred)
         db = firestore.client()
         self.collection_ref = db.collection(collection)

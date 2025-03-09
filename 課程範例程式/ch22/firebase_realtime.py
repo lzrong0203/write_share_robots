@@ -13,7 +13,7 @@ class Firebase_PTT_Realtime:
             path (str): 資料要儲存的路徑
         """
         # 初始化 Firebase 憑證
-        cred = credentials.Certificate("stocksentiment-8cf69-firebase-adminsdk-rsalw-4d49167956.json")
+        cred = credentials.Certificate("stocksentiment-8cf69-firebase-adminsdk-rsalw-a998bda61f.json")
 
         # 注意：請替換成您的資料庫 URL
         firebase_admin.initialize_app(cred, {
@@ -130,7 +130,7 @@ class Firebase_PTT_Realtime:
 if __name__ == "__main__":
     firebase = Firebase_PTT_Realtime("ptt_posts")
     # 上傳新文章
-    firebase.upload_post(max_posts=1)
+    firebase.upload_post(max_posts=10)
 
     # 讀取所有文章
     firebase.get_posts()
