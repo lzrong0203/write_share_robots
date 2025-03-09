@@ -1,0 +1,18 @@
+{% extends 'accounts/base.html' %}
+
+{% block title %}首頁 | Firebase 身份驗證{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <h2 class="text-center mb-4">歡迎使用</h2>
+    
+    <div class="alert alert-success">
+        <p>您已成功登入！</p>
+        <p>電子郵件: <strong>{{ user_email }}</strong></p>
+    </div>
+    
+    <div class="d-grid gap-2 mt-4">
+        <a href="{% url 'logout' %}" class="btn btn-danger">登出</a>
+    </div>
+</div>
+{% endblock %} 
