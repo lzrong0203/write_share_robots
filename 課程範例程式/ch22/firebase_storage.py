@@ -37,14 +37,14 @@ class FirebaseStorageUploader:
             return None
 
 
-def get_news(driver, max_news=3):
+def get_news(driver, max_news=10):
     wait = WebDriverWait(driver, 10)
-    driver.get("https://mops.twse.com.tw/mops/web/t05st02")
+    driver.get("https://mopsov.twse.com.tw/mops/web/t05st02")
     year = driver.find_element(By.ID, "year")
     year.clear()
-    year.send_keys("111")
-    driver.find_element(By.ID, "month").send_keys("10")
-    driver.find_element(By.ID, "day").send_keys("5")
+    year.send_keys("114")
+    driver.find_element(By.ID, "month").send_keys("2")
+    driver.find_element(By.ID, "day").send_keys("27")
     driver.find_element(By.XPATH, "//input[@value=' 查詢 ']").click()
     original_window = driver.current_window_handle
     print(driver.current_window_handle)
@@ -97,9 +97,9 @@ def run_scraper_and_upload(max_news=3):
     uploader = FirebaseStorageUploader()
 
     options = Options()
-    options.headless = True
+    options.add_argument("--headless")
 
-    with webdriver.Firefox() as driver:
+    with webdriver.Firefox(options=options) as driver:
         get_news(driver, max_news)
 
         # 尋找所有已下載的圖片並上傳
