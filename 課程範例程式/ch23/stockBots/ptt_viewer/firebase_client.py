@@ -1,5 +1,6 @@
 import firebase_admin
 from firebase_admin import credentials, db
+import os
 
 class FirebasePTTClient:
     """Firebase PTT 文章客戶端"""
@@ -17,10 +18,16 @@ class FirebasePTTClient:
         """初始化 Firebase 連接"""
         # 檢查 Firebase 是否已初始化
         if not firebase_admin._apps:
+            # 獲取專案根目錄的絕對路徑
+            base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            # 憑證文件的路徑
+            cred_path = os.path.join(base_dir, "stocksentiment-8cf69-firebase-adminsdk-rsalw-a998bda61f.json")
+            
             # 初始化 Firebase
-            cred = credentials.Certificate("stocksentiment-8cf69-firebase-adminsdk-rsalw-a998bda61f.json")
+            cred = credentials.Certificate(cred_path)
             firebase_admin.initialize_app(cred, {
-                'databaseURL': 'https://stocksentiment-8cf69-default-rtdb.asia-southeast1.firebasedatabase.app/'
+                'databaseURL': 'https://stocksentiment-8cf69-default-rtdb.asia-southeast1.firebasedatabase.app/',
+                'storageBucket': 'stocksentiment-8cf69.firebasestorage.app'
             })
         
         # 獲取 PTT 文章的參考路徑

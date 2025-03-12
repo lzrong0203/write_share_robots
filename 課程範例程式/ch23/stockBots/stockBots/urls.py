@@ -16,10 +16,30 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+from django.views.generic import TemplateView
+from django.http import HttpResponse
+from django.views.decorators.cache import never_cache
+
+# 提供 Service Worker 文件
+def firebase_messaging_sw(request):
+    with open(settings.BASE_DIR / 'static' / 'firebase-messaging-sw.js', 'r') as f:
+        content = f.read()
+    return HttpResponse(content, content_type='application/javascript')
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("accounts.urls")),  # 包含 accounts 應用程式的 URL
     path("stocks/", include("stock_charts.urls")),  # 添加 stock_charts 應用程式的 URL
     path("ptt/", include("ptt_viewer.urls")),  # 添加 ptt_viewer 應用程式的 URL
+    path("mops/", include("mops_news.urls")),  # 添加股市重大訊息查看應用程式的 URL
+    path("notifications/", include("notifications.urls")),  # 添加通知應用程式的 URL
+    
+    # 提供 Service Worker 文件
+    path("firebase-messaging-sw.js", never_cache(firebase_messaging_sw), name="firebase_messaging_sw"),
 ]
+
+# 在開發環境中提供靜態文件
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
