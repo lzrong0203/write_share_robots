@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SentimentMontior</string>
+    <string name="default_notification_channel_id">stock_sentiment_channel</string>
+    <string name="default_notification_channel_name">股票情緒通知</string>
+</resources>
