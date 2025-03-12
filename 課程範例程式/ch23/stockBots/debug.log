@@ -894,3 +894,11 @@ INFO 2025-03-11 23:48:06,490 autoreload /Users/lzrong/PycharmProjects/write_shar
 INFO 2025-03-11 23:48:06,924 autoreload Watching for file changes with StatReloader
 INFO 2025-03-11 23:48:10,876 autoreload /Users/lzrong/PycharmProjects/write_share_robots/課程範例程式/ch23/stockBots/notifications/views.py changed, reloading.
 INFO 2025-03-11 23:48:11,358 autoreload Watching for file changes with StatReloader
+INFO 2025-03-12 01:04:00,893 autoreload Watching for file changes with StatReloader
+INFO 2025-03-12 02:05:33,776 basehttp "POST /notifications/subscribe_topic/ HTTP/1.1" 200 125
+INFO 2025-03-12 02:05:34,302 basehttp "POST /notifications/subscribe_topic/ HTTP/1.1" 200 125
+INFO 2025-03-12 02:05:35,701 basehttp "POST /notifications/subscribe_topic/ HTTP/1.1" 200 125
+INFO 2025-03-12 02:27:45,129 basehttp "GET /static/img/notification-icon.png HTTP/1.1" 200 46
+INFO 2025-03-12 03:24:26,085 basehttp "GET /static/img/notification-icon.png HTTP/1.1" 304 0
+INFO 2025-03-12 03:45:15,243 basehttp "GET /static/img/notification-icon.png HTTP/1.1" 304 0
+INFO 2025-03-12 04:14:28,438 basehttp "GET /static/img/notification-icon.png HTTP/1.1" 304 0
