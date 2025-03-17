@@ -1,0 +1,31 @@
+{% extends 'accounts/base.html' %}
+
+{% block title %}登入 | Firebase 身份驗證{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <h2 class="text-center mb-4">登入帳號</h2>
+    
+    <form method="post">
+        {% csrf_token %}
+        
+        <div class="mb-3">
+            <label for="email" class="form-label">電子郵件</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        
+        <div class="mb-3">
+            <label for="password" class="form-label">密碼</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary">登入</button>
+        </div>
+    </form>
+    
+    <div class="mt-3 text-center">
+        <p>還沒有帳號？ <a href="{% url 'register' %}">註冊</a></p>
+    </div>
+</div>
+{% endblock %} 

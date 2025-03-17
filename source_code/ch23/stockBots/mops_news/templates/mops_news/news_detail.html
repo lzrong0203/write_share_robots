@@ -1,0 +1,20 @@
+{% extends 'accounts/base.html' %}
+
+{% block title %}{{ stock_id }} 重大訊息 | {{ display_date }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center mb-4">{{ stock_id }} 重大訊息</h2>
+    <p class="text-center mb-4">發布時間: {{ display_date }}</p>
+    
+    <div class="mb-3">
+        <a href="{% url 'news_list' stock_id %}" class="btn btn-secondary">返回訊息列表</a>
+    </div>
+    
+    <div class="card mb-4">
+        <div class="card-body text-center">
+            <img src="{{ url }}" class="img-fluid" alt="{{ stock_id }} 重大訊息">
+        </div>
+    </div>
+</div>
+{% endblock %} 

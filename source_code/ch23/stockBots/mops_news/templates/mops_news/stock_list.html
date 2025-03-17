@@ -1,0 +1,31 @@
+{% extends 'accounts/base.html' %}
+
+{% block title %}股市重大訊息 | 股票列表{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center mb-4">股市重大訊息 - 股票列表</h2>
+    
+    {% if stocks %}
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for stock_id in stocks %}
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ stock_id }}</h5>
+                        <p class="card-text">查看 {{ stock_id }} 的重大訊息</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'news_list' stock_id %}" class="btn btn-primary">查看訊息</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-info">
+            沒有找到股票資料
+        </div>
+    {% endif %}
+</div>
+{% endblock %} 
